@@ -25,7 +25,7 @@ class DialogUtils {
         }
 
         fun showInstaMoonOptionsDialog(ctx: Context, instagramMainActivity: InstagramMainActivity) {
-            val alertDialog = buildAlertDialog(ctx, "INSTA MOON \uD83C\uDF19")
+            val alertDialog = buildAlertDialog(ctx, "INSTAWIZ \uD83D\uDC9E")
             val options = arrayOf("Ghost Mode", "Extra options", "Open Developer Mode", "Export Developer Mode Settings", "Import Developer Mode Settings", "Clear Developer Mode Settings", "Save File (id_name_mapping.json)", "About the App")
             alertDialog.setItems(options, object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
@@ -142,7 +142,7 @@ class DialogUtils {
 
         fun showFileNameDialog(ctx: Context, fileMCOverrides: File) {
             val input = EditText(ctx)
-            val outputFileName = "InstaMoon_Backup_" + SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(Date())
+            val outputFileName = "InstaWiz_Backup_" + SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(Date())
             input.setPadding(48, 32, 32, 4)
             input.setTextSize(16f)
             input.setHint("Enter file name")
@@ -182,16 +182,16 @@ class DialogUtils {
 
         private fun showAboutAppDialogDialog(ctx: Context) {
             val alertDialog = buildAlertDialog(ctx, "ABOUT THE APP \uD83D\uDCF1")
-            alertDialog.setMessage("InstaMoon \uD83C\uDF19 "+Constants.VERSION+"\n\n⭒Developed by brianml31⭒\n\nBased on version: "+Utils.getVersionName(ctx)+"\n\nThanks to:\n⋆ Monserrat G\n⋆ Revanced")
+            alertDialog.setMessage("InstaWiz \uD83D\uDC9E "+Constants.VERSION+"\n\n⭒Developed by Abhii⭒\n\nBased on version: "+Utils.getVersionName(ctx)+"\n\nThanks to:\n⋆ Monserrat G\n⋆ Revanced")
             alertDialog.setNeutralButton("CHECK UPDATE", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     val updateTask = UpdateTask(ctx)
-                    updateTask.execute(Brian.decodeBase64(Constants.VERSION_CHECK_URL))
+                    updateTask.execute(anurag.decodeBase64(Constants.VERSION_CHECK_URL))
                 }
             })
             alertDialog.setNegativeButton("GITHUB", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
-                    Utils.openLink(ctx, Brian.decodeBase64(Constants.GITHUB_URL))
+                    Utils.openLink(ctx, anurag.decodeBase64(Constants.GITHUB_URL))
                 }
             })
             alertDialog.setPositiveButton("CLOSE", object : DialogInterface.OnClickListener {
